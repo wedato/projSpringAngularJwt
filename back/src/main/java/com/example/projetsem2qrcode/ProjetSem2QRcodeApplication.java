@@ -17,7 +17,6 @@ import org.springframework.web.filter.CorsFilter;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static com.example.projetsem2qrcode.constant.FileConstant.USER_FOLDER;
@@ -38,7 +37,10 @@ public class ProjetSem2QRcodeApplication {
         UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
-        corsConfiguration.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
+//        corsConfiguration.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
+//        corsConfiguration.setAllowedOrigins(Collections.singletonList("http://localhost:8100"));
+        corsConfiguration.addAllowedOrigin("http://localhost:4200");
+        corsConfiguration.addAllowedOrigin("http://localhost:8100");
         corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
                 "Accept", "Jwt-Token", "Authorization", "Origin, Accept", "X-Requested-With",
                 "Access-Control-Request-Method", "Access-Control-Request-Headers"));

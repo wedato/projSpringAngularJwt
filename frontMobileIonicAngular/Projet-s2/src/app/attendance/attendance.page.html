@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>attendance</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none">
+    <ion-label><b>Texte à encoder:</b></ion-label>
+    <ion-input [(ngModel)]="textToCode" placeholder="Entrez votre URL"></ion-input>
+  </ion-item>
+
+  <ion-button color="tertiary" expand="block" (click)="createQRCode()" *ngIf="!showCamera">
+    <ion-icon slot="start" name="create"></ion-icon>
+    Créer un QR Code
+  </ion-button>
+
+<!--  affiche  le qr code seulement si non vide-->
+  <div class="center" *ngIf="myQrCode">
+    <qrcode [qrdata]="myQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+  </div>
+
+</ion-content>

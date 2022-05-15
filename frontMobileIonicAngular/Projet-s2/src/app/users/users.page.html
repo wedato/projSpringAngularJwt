@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>Ca marche</p>
+  <ion-list>
+    <ion-item *ngFor="let user of listeUsers">
+      <ion-avatar>
+        <ion-img [src]="user.profileImageUrl"></ion-img>
+      </ion-avatar>
+      <ion-label>{{user.lastName}} {{user.firstName}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
